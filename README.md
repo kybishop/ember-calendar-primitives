@@ -1,4 +1,4 @@
-# Ember-calendar-primitive
+# ember-calendar-primitives
 
 This README outlines the details of collaborating on this Ember addon.
 
