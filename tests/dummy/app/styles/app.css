@@ -1,0 +1,111 @@
+body {
+  min-height: 100vh;
+}
+
+.ecp--month-navigation,
+.ecp--month-navigation-label,
+.ecp--month-navigation-left,
+.ecp--month-navigation-right,
+.ecp--column-labels,
+.ecp--column-label,
+.ecp--month-view,
+.ecp--week,
+.ecp--day
+ {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.ecp--colum-label, .ecp--day {
+  -webkit-flex: 1 0 0;
+  -ms-flex: 1 0 0;
+  flex: 1 0 0;
+}
+
+.ecp--month-navigation
+.ecp--month-navigation-label,
+.ecp--month-navigation-left,
+.ecp--month-navigation-right,
+.ecp--column-label,
+.ecp--day {
+  text-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.ecp--month-navigation {
+  box-sizing: border-box;
+  height: 33px;
+  width: 380px;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.ecp--month-navigation-label {
+  flex-grow: 15;
+}
+
+.ecp--month-navigation-left, .ecp--month-navigation-right {
+  cursor: pointer;
+}
+
+.ecp--column-labels {
+  box-sizing: border-box;
+  height: 19px;
+  width: 380px;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.ecp--column-label {
+  color: #6e788b;
+  font-size: 11px;
+  box-sizing: border-box;
+}
+
+.ecp--month-view {
+  box-sizing: border-box;
+  width: 380px;
+  height: 300px;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.ecp--week {
+  box-sizing: border-box;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.ecp--day {
+  color: rgb(110, 120, 139);
+  margin: 1px;
+  background-color: rgb(231, 233, 236);
+  box-sizing: border-box;
+}
+
+.ecp--day-from-previous-month,
+.ecp--day-from-next-month {
+  background-color: transparent;
+  color: transparent;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

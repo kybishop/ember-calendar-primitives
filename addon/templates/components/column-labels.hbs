@@ -1,0 +1,11 @@
+<div class="ecp--column-labels">
+  {{#each weekdayNumbersToDisplay as |weekdayNumber|}}
+    <div class="ecp--column-label">
+      {{#if hasBlock}}
+        {{yield weekdayNumber}}
+      {{else}}
+        {{weekday-number-to-abbreviation weekdayNumber}}
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
