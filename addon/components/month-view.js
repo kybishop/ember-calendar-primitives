@@ -4,7 +4,11 @@ import layout from '../templates/components/month-view';
 export default Ember.Component.extend({
   layout,
 
-  dateInView: null,
+  dateInView: Ember.computed({
+    set(_, dateInView) {
+      return new Date(dateInView.getFullYear(), dateInView.getMonth(), 1);
+    }
+  }),
 
   /**
    * An array of the dates to be displayed.
@@ -63,6 +67,12 @@ export default Ember.Component.extend({
       }
     }
 
+    // ensure height consistency between months by ensuring datesToDisplayByWeek
+    // has 6 weeks, even if the last weeks are empty.
+    for(let i = datesToDisplayByWeek.length; i < 6; i++) {
+      datesToDisplayByWeek.push([]);
+    }
+
     return datesToDisplayByWeek;
   }),
 
@@ -71,5 +81,7 @@ export default Ember.Component.extend({
 
     return new Date(dateInView.getFullYear(),
                     dateInView.getMonth() + 1, 0).getDate();
-  })
+  }),
+
+  startOfWeek: 0
 });

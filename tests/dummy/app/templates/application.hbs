@@ -1,5 +1,9 @@
-{{#ember-calendar-primitives startOfWeek=0 as |ecp|}}
-  {{ecp.month-navigation}}
-  {{ecp.column-labels}}
-  {{ecp.month-view}}
-{{/ember-calendar-primitives}}
+{{#month-navigation dateInView=dateInView onDateChange=(action (mut dateInView)) as |dateInView|}}
+  {{month-name dateInView}}
+{{/month-navigation}}
+{{column-labels}}
+{{#month-view dateInView=dateInView as |date|}}
+  <div class="{{day-classes date dateInView}}">
+    {{day-of-month date}}
+  </div>
+{{/month-view}}

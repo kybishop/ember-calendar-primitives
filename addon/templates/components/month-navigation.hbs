@@ -1,11 +1,11 @@
 <div class="ecp--month-navigation">
-  <div class="ecp--month-navigation-left" {{action "previousMonth"}}>&lt;</div>
+  <div class="ecp--month-navigation-left" onKeyDown={{action "keyDownPreviousMonth"}}
+                                          role="button"
+                                          {{action "previousMonth"}}>&lt;</div>
   <div class="ecp--month-navigation-label">
-    {{#if hasBlock}}
-      {{yield dateInView}}
-    {{else}}
-      {{month-name dateInView}}
-    {{/if}}
+    {{yield dateInView}}
   </div>
-  <div class="ecp--month-navigation-right" {{action "nextMonth"}}>&gt;</div>
+  <div class="ecp--month-navigation-right" onKeyDown={{action "keyDownNextMonth"}}
+                                           role="button"
+                                           {{action "nextMonth"}}>&gt;</div>
 </div>

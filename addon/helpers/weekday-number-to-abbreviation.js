@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
+// TODO(kjb) Move this into the dummy app
 const WEEKDAY_ABBREVIATIONS = [
   'Su',
   'M',

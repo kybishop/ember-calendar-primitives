@@ -2,13 +2,7 @@
   {{#each datesToDisplayByWeek as |weekOfDates|}}
     <div class="ecp--week">
       {{#each weekOfDates as |date|}}
-        {{#if hasBlock}}
-          {{yield date}}
-        {{else}}
-          <div class="{{day-classes date dateInView}}">
-            {{day-of-month date}}
-          </div>
-        {{/if}}
+        {{yield date}}
       {{/each}}
     </div>
   {{/each}}

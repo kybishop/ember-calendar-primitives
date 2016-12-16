@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-calendar-primitives'
+  name: 'ember-calendar-primitives',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
