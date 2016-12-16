@@ -1,6 +1,6 @@
 {
   "name": "ember-calendar-primitives",
-  "version": "0.0.3-alpha1",
+  "version": "0.0.4",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
