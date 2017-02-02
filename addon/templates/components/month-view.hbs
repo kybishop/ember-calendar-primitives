@@ -1,9 +1,9 @@
-<div class="ecp--month-view">
+<vbox class="ecp--month-view">
   {{#each datesToDisplayByWeek as |weekOfDates|}}
-    <div class="ecp--week">
+    <hbox class="ecp--week">
       {{#each weekOfDates as |date|}}
         {{yield date}}
       {{/each}}
-    </div>
+    </hbox>
   {{/each}}
-</div>
+</vbox>

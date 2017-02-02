@@ -3,6 +3,7 @@
 
 module.exports = {
   name: 'ember-calendar-primitives',
+
   isDevelopingAddon: function() {
     return true;
   }

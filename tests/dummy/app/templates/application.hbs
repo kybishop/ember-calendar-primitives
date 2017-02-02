@@ -1,9 +1,15 @@
-{{#month-navigation dateInView=dateInView onDateChange=(action (mut dateInView)) as |dateInView|}}
-  {{month-name dateInView}}
-{{/month-navigation}}
-{{column-labels}}
-{{#month-view dateInView=dateInView as |date|}}
-  <div class="{{day-classes date dateInView}}">
-    {{day-of-month date}}
-  </div>
-{{/month-view}}
+<screen>
+  <page>
+    <box class="container">
+      {{#month-navigation dateInView=dateInView onDateChange=(action (mut dateInView)) as |dateInView|}}
+        <centered>{{month-name dateInView}}</centered>
+      {{/month-navigation}}
+      {{column-labels}}
+      {{#month-view dateInView=dateInView as |date|}}
+        <box align="center" justify="center" class="{{day-classes date dateInView}}">
+          {{day-of-month date}}
+        </box>
+      {{/month-view}}
+    </box>
+  </page>
+</screen>

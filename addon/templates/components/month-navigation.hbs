@@ -1,11 +1,11 @@
-<div class="ecp--month-navigation">
-  <div class="ecp--month-navigation-left" onKeyDown={{action "keyDownPreviousMonth"}}
+<hbox class="ecp--month-navigation">
+  <centered fit class="ecp--month-navigation-left" onKeyDown={{action "keyDownPreviousMonth"}}
                                           role="button"
-                                          {{action "previousMonth"}}>&lt;</div>
-  <div class="ecp--month-navigation-label">
+                                          {{action "previousMonth"}}>&lt;</centered>
+  <box class="ecp--month-navigation-label">
     {{yield dateInView}}
-  </div>
-  <div class="ecp--month-navigation-right" onKeyDown={{action "keyDownNextMonth"}}
+  </box>
+  <centered fit class="ecp--month-navigation-right" onKeyDown={{action "keyDownNextMonth"}}
                                            role="button"
-                                           {{action "nextMonth"}}>&gt;</div>
-</div>
+                                           {{action "nextMonth"}}>&gt;</centered>
+</hbox>
