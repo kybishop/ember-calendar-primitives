@@ -1,14 +1,15 @@
 import Ember from 'ember';
 import layout from '../templates/components/month-view';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   layout,
 
-  dateInView: Ember.computed({
-    set(_, dateInView) {
-      return new Date(dateInView.getFullYear(), dateInView.getMonth(), 1);
-    }
-  }),
+  /**
+   * Set by the caller of the component
+   * @type {Moment}
+   */
+  dateInView: null,
 
   /**
    * An array of the dates to be displayed.
@@ -28,18 +29,14 @@ export default Ember.Component.extend({
 
     // pad datesToDisplay with dates from the previous month until
     // the day before the start of the week.
-    let daysToPad = Math.abs(dateInView.getDay() - startOfWeek);
+    let startDate = dateInView.clone()
+      .startOf('month')
+      .subtract(dateInView.weekday() - startOfWeek, 'days');
 
-    let startDate = new Date(dateInView.getFullYear(),
-                             dateInView.getMonth(),
-                             dateInView.getDate() - daysToPad);
-    //
     // Ensure height consistency between months by adding dates until
     // datesToDisplayByWeek has 6 full weeks.
     for (let i = 0; datesToDisplayByWeek.length < 6; i++) {
-      currentWeekOfDates.push(new Date(startDate.getFullYear(),
-                                       startDate.getMonth(),
-                                       startDate.getDate() + i));
+      currentWeekOfDates.push(startDate.clone().add(i, 'days'));
 
       if (currentWeekOfDates.length === 7) {
         datesToDisplayByWeek.push(currentWeekOfDates);
@@ -48,13 +45,6 @@ export default Ember.Component.extend({
     }
 
     return datesToDisplayByWeek;
-  }),
-
-  _daysInMonthOfDateInView: Ember.computed('dateInView', function() {
-    let dateInView = this.get('dateInView');
-
-    return new Date(dateInView.getFullYear(),
-                    dateInView.getMonth() + 1, 0).getDate();
   }),
 
   startOfWeek: 0

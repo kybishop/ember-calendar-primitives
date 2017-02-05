@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
-export function dayClasses([date, dateInView]) {
-  if (date.getMonth() === dateInView.getMonth()) {
+export function dayClasses([moment, dateInView]) {
+  if (moment.month() === dateInView.month()) {
     return 'ecp--day';
-  } else if (date.getMonth() < dateInView.getMonth()) {
+  } else if (moment.month() < dateInView.month()) {
     return 'ecp--day ecp--day-from-previous-month';
   } else {
     return 'ecp--day ecp--day-from-next-month';

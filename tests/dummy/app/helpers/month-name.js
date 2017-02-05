@@ -15,8 +15,8 @@ const MONTH_NAMES = [
   'December'
 ];
 
-export function monthName([date]) {
-  return MONTH_NAMES[date.getMonth()] + ' ' + date.getFullYear();
+export function monthName([moment]) {
+  return MONTH_NAMES[moment.month()] + ' ' + moment.year();
 }
 
 export default Ember.Helper.helper(monthName);

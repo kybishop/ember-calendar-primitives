@@ -1,9 +1,14 @@
 import Ember from 'ember';
 import layout from '../templates/components/month-navigation';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   layout,
 
+  /**
+   * Set by the caller of the component
+   * @type {Moment}
+   */
   dateInView: null,
 
   actions: {
@@ -20,19 +25,15 @@ export default Ember.Component.extend({
     },
 
     previousMonth() {
-      let currentDate = this.get('dateInView');
-
-      this.get('onDateChange')(new Date(currentDate.getFullYear(),
-                                        currentDate.getMonth() - 1,
-                                        1));
+      this.get('onDateChange')(
+        this.get('dateInView').clone().startOf('month').subtract(1, 'month')
+      );
     },
 
     nextMonth() {
-      let currentDate = this.get('dateInView');
-
-      this.get('onDateChange')(new Date(currentDate.getFullYear(),
-                                        currentDate.getMonth() + 1,
-                                        1));
+      this.get('onDateChange')(
+        this.get('dateInView').clone().startOf('month').add(1, 'month')
+      );
     }
   }
 });

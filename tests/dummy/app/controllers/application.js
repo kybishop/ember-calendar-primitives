@@ -1,5 +1,6 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Controller.extend({
-  dateInView: new Date()
+  dateInView: moment().startOf('month')
 });

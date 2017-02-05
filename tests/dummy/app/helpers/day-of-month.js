@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-export function dayOfMonth([date]) {
-  return date.getDate();
+export function dayOfMonth([moment]) {
+  return moment.date();
 }
 
 export default Ember.Helper.helper(dayOfMonth);
