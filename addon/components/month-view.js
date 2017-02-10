@@ -27,11 +27,10 @@ export default Ember.Component.extend({
     let datesToDisplayByWeek = [];
     let currentWeekOfDates = [];
 
-    // pad datesToDisplay with dates from the previous month until
-    // the day before the start of the week.
-    let startDate = dateInView.clone()
-      .startOf('month')
-      .subtract(dateInView.weekday() - startOfWeek, 'days');
+    let startDate = dateInView.clone().startOf('month');
+
+    // Start on the first day of the week
+    startDate.subtract(startDate.weekday() - startOfWeek, 'days');
 
     // Ensure height consistency between months by adding dates until
     // datesToDisplayByWeek has 6 full weeks.
